@@ -410,7 +410,7 @@ def main():
         X_val_transformed, 
         y_val, 
         batch_size=8, 
-        epochs=100
+        epochs=110
     )
     
     # Visualize ForestDNN loss
@@ -438,7 +438,7 @@ def main():
         dropout_prob=0.3
     ).to(device)
     
-    optimizer_raw = optim.Adam(raw_dnn.parameters(), lr=1e-4, weight_decay=1e-4)
+    optimizer_raw = optim.Adam(raw_dnn.parameters(), lr=1e-5, weight_decay=1e-4)
     
     loss_history_raw = trainer.train_dnn(
         raw_dnn, 
@@ -448,7 +448,7 @@ def main():
         X_val, 
         y_val, 
         batch_size=8, 
-        epochs=100
+        epochs=200
     )
     
     # Visualize Raw DNN loss
